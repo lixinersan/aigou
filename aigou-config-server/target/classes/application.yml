@@ -1,0 +1,18 @@
+server:
+  port: 4000
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1000/eureka/
+  instance:
+    prefer-ip-address: true # 用ip进行注册
+spring:
+  application:
+    name: spring-cloud-config-server #服务名
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/lixinersan/aigou-config.git
+          username: lixinersan
+          password: lixin.1138453458

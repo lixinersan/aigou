@@ -1,0 +1,23 @@
+eureka:
+  client:
+    serviceUrl: #注册中心的注册地址
+      defaultZone: http://localhost:1000/eureka/
+  instance:
+    prefer-ip-address: true #使用ip注册
+
+#指向配置中心
+#spring:
+#  cloud:
+#   config:
+#      uri: http://localhost:5000  #配置中心地址
+#      label: master   #主分支
+#      profile: dev #环境
+#      name: application-store #配置文件的名字
+spring:
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        serviceId: SPRING-CLOUD-CONFIG-SERVER    #使用名字  方便以后配置文件集群
+      name: application-plat         #远程配置中名字
+      profile: dev                    #环境
